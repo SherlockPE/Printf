@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:04:43 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/11/12 06:52:44 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/12 07:38:42 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,26 +32,28 @@ void	flags_format(va_list lista, char c, int *ptr_i)
 		ft_converter_hexa_mayus(va_arg(lista, int), ptr_i);
 }
 
-int	ft_printf(char const *values, ...)
+int    ft_printf(char const *values, ...)
 {
-	va_list	lista;
-	int		i;
-	int		count_char;
+    va_list    lista;
+    int        i;
+    int        count_char;
 
-	va_start(lista, values);
-	i = 0;
-	while (values[i])
-	{
-		if (values[i] == '%')
-		{
-			i++;
+    count_char = 0;
+    va_start(lista, values);
+    i = 0;
+    while (values[i])
+    {
+        if (values[i] == '%')
+        {
+            i++;
 			flags_format(lista, values[i], &count_char);
-		}
-		ft_putchar(values[i], &i);
-		i++;
-	}
-	va_end(lista);
-	return (count_char);
+        }
+        else
+            ft_putchar(values[i], &count_char);
+        i++;
+    }
+    va_end(lista);
+    return (count_char);
 }
 
 /*
