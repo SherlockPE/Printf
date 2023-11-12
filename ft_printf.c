@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:04:43 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/11/12 09:44:39 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/12 15:25:23 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	flags_format(va_list lista, char c, int *ptr_i)
 	else if (c == 's')
 		ft_putstr(va_arg(lista, char *), ptr_i);
 	else if (c == 'p')
-		ft_print_memory(va_arg(lista, int), ptr_i);
+		ft_print_memory(va_arg(lista, void *), ptr_i);
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(lista, int), ptr_i);
 	else if (c == 'u')
@@ -34,26 +34,26 @@ void	flags_format(va_list lista, char c, int *ptr_i)
 
 int    ft_printf(char const *values, ...)
 {
-    va_list    lista;
-    int        i;
-    int        count_char;
+	va_list    lista;
+	int        i;
+	int        count_char;
 
-    count_char = 0;
-    va_start(lista, values);
-    i = 0;
-    while (values[i])
-    {
-        if (values[i] == '%')
-        {
-            i++;
+	count_char = 0;
+	va_start(lista, values);
+	i = 0;
+	while (values[i])
+	{
+		if (values[i] == '%')
+		{
+			i++;
 			flags_format(lista, values[i], &count_char);
-        }
-        else
-            ft_putchar(values[i], &count_char);
-        i++;
-    }
-    va_end(lista);
-    return (count_char);
+		}
+		else
+			ft_putchar(values[i], &count_char);
+		i++;
+	}
+	va_end(lista);
+	return (count_char);
 }
 
 /*
