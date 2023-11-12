@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 03:50:22 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/11/12 03:56:24 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/12 06:48:41 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ void	ft_putstr(char *s, int *count)
 
 	i = 0;
 	while (s[i] != '\0')
-    {
-        ft_putchar(s[i], &count);
-        i++;
-    }
+	{
+		ft_putchar(s[i], count);
+		i++;
+	}
 }

@@ -3,20 +3,34 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+         #
+#    By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/27 12:04:56 by fabriciolop       #+#    #+#              #
-#    Updated: 2023/10/27 12:17:50 by fabriciolop      ###   ########.fr        #
+#    Updated: 2023/11/12 06:41:39 by flopez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-
-SRC = ft_printf.c ft_putchar_fd.c ft_putstr_fd.c ft_putnbr_fd.c
-
-OBJ = $(SRC:.c=.o)
+SRC = ft_printf.c ft_putchar.c ft_putnbr.c ft_putstr.c
+OBJ = $(SRC:%.c=%.o)
+C_FLAGS = -Wall -Wextra -Werror
+CC = gcc
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	
+	ar -rcs $(NAME) $(OBJ)
+
+%.o: %.c
+	$(CC) $(FLAGS) -c $< -o $@
+
+clean:
+	rm -f $(OBJ)
+
+fclean: clean
+	rm -f $(NAME)
+
+re:
+	fclean all
+
+.PHONY: all clean fclean re
