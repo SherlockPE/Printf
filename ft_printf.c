@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:04:43 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/11/12 07:38:42 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/12 09:44:39 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	flags_format(va_list lista, char c, int *ptr_i)
 	else if (c == 's')
 		ft_putstr(va_arg(lista, char *), ptr_i);
 	else if (c == 'p')
-		printf("Soy una dirección de memoria");
+		ft_print_memory(va_arg(lista, int), ptr_i);
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(lista, int), ptr_i);
 	else if (c == 'u')
