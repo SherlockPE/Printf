@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:04:43 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/11/12 04:05:16 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/12 04:11:56 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int	ft_printf(char const *values, ...)
 		i++;
 	}
 	va_end(lista);
-	return (0);
+	return (count_char);
 }
 
 int main(void)
