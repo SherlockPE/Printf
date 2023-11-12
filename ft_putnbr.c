@@ -1,30 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
+/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/27 12:04:47 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/10/27 12:10:18 by fabriciolop      ###   ########.fr       */
+/*   Created: 2023/11/12 03:58:29 by flopez-r          #+#    #+#             */
+/*   Updated: 2023/11/12 04:00:19 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_putchar_fd(char c, int fd)
-{
-	write(fd, &c, 1);
-}
+#include "ft_printf.h"
 
-void	ft_putstr_fd(char *s, int fd)
-{
-	int	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		write(fd, &s[i++], 1);
-}
-
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putnbr(int n, int *count)
 {
 	char	result;
 	long	number;
@@ -32,11 +20,11 @@ void	ft_putnbr_fd(int n, int fd)
 	number = (long) n;
 	if (number < 0)
 	{
-		write(fd, "-", 1);
+		write(1, "-", 1);
 		number = -number;
 	}
 	if (number > 9)
-		ft_putnbr_fd(number / 10, fd);
+		ft_putnbr_fd(number / 10, 1);
 	result = (number % 10) + '0';
-	write(fd, &result, 1);
+    ft_putchar(result, &count);
 }
