@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 06:53:54 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/11/12 07:40:01 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/13 19:08:39 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,25 +20,25 @@ int main(void)
 	printf("Original function: \n");
 	printf("Caracter            : %c\n", 'c');
 	printf("String              : %s\n", "Soy una string");
-	printf("Dirección de memoria: %p\n", &i);
+	printf("Dirección de memoria: %p\n", &i + 10);
 	printf("Digit               : %d\n", 7);
 	printf("Integer             : %i\n", 7);
 	printf("Unsigned Int        : %u\n", i);
-	printf("Hexadecimal min     : %x\n", 10);
-	printf("Hexadecimal mayus   : %X\n", 10);
+	printf("Hexadecimal min     : %x\n", 100);
+	printf("Hexadecimal mayus   : %X\n", 100);
 		
 	printf("\n");
 	ft_printf("\n");
 
-	ft_printf("Original function: \n");
+	ft_printf("Recreated function: \n");
 	ft_printf("Caracter            : %c\n", 'c');
 	ft_printf("String              : %s\n", "Soy una string");
-	ft_printf("Dirección de memoria: %p\n", &i);
+	ft_printf("Dirección de memoria: %p\n", &i + 10);
 	ft_printf("Digit               : %d\n", 7);
 	ft_printf("Integer             : %i\n", 7);
 	ft_printf("Unsigned Int        : %u\n", i);
-	ft_printf("Hexadecimal min     : %x\n", 10);
-	ft_printf("Hexadecimal mayus   : %X\n", 10);
+	ft_printf("Hexadecimal min     : %x\n", 100);
+	ft_printf("Hexadecimal mayus   : %X\n", 100);
 	
 	return 0;
 }
