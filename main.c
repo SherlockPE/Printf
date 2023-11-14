@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 06:53:54 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/11/13 19:08:39 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/14 17:30:52 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int main(void)
 {
 	unsigned int i = 0;
 	
+	//Original
 	printf("Original function: \n");
 	printf("Caracter            : %c\n", 'c');
 	printf("String              : %s\n", "Soy una string");
@@ -26,10 +27,12 @@ int main(void)
 	printf("Unsigned Int        : %u\n", i);
 	printf("Hexadecimal min     : %x\n", 100);
 	printf("Hexadecimal mayus   : %X\n", 100);
+	printf("percent:  %%");
 		
 	printf("\n");
 	ft_printf("\n");
 
+	//Recreated
 	ft_printf("Recreated function: \n");
 	ft_printf("Caracter            : %c\n", 'c');
 	ft_printf("String              : %s\n", "Soy una string");
@@ -39,6 +42,10 @@ int main(void)
 	ft_printf("Unsigned Int        : %u\n", i);
 	ft_printf("Hexadecimal min     : %x\n", 100);
 	ft_printf("Hexadecimal mayus   : %X\n", 100);
+	ft_printf("percent:  %%");
+	
+	printf("\n");
+	ft_printf("\n");
 	
 	return 0;
 }
