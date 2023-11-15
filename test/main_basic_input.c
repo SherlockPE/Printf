@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 06:53:54 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/11/15 19:36:59 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/15 19:49:58 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int main(void)
 	unsigned int i = 0;
 	char *str_stack;
 	char *str_heap;
+	char *until_null = "Function printf prints unt\0il";
 	
 	str_stack = "Soy una string en el stack";
 	str_heap = calloc(4, 1);
@@ -36,8 +37,8 @@ int main(void)
 	printf("Hexadecimal min     : %x\n", 100);
 	printf("Hexadecimal mayus   : %X\n", 100);
 	printf("percent             : %%");
+	printf("%s\n", until_null);
 
-	printf("\n");
 	ft_printf("\n");
 
 	//Recreated
@@ -53,8 +54,8 @@ int main(void)
 	ft_printf("Hexadecimal min     : %x\n", 100);
 	ft_printf("Hexadecimal mayus   : %X\n", 100);
 	ft_printf("percent             : %%");
+	ft_printf("%s\n", until_null);
 	
-	printf("\n");
 	ft_printf("\n");
 	
 	return 0;
