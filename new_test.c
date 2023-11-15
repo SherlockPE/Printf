@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 16:15:17 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/11/15 16:35:57 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/15 17:13:42 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int main()
 	int n_guarida = 12;
 	
 	char *respuesta;
-	void *pointer_to_null = NULL;
+	void *pointer_to_null = 0;
 	respuesta = calloc(3, 1);
 	respuesta[0] = 'n';
 	respuesta[1] = 'o';
