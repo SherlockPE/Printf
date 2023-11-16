@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 03:58:29 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/11/16 16:41:04 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:56:54 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,20 @@ void	ft_putnbr(int n, int *count)
 	if (number < 0)
 	{
 		ft_putchar('-', count);
+		if (*count == -1)
+			return ;
 		number = -number;
 	}
 	if (number > 9)
+	{
 		ft_putnbr(number / 10, count);
+		if (*count == -1)
+			return ;	
+	}
 	result = (number % 10) + '0';
 	ft_putchar(result, count);
+	if (*count == -1)
+		return ;
 }
 
 void	ft_putnbr_unsigned(unsigned int n, int *count)
@@ -36,7 +44,13 @@ void	ft_putnbr_unsigned(unsigned int n, int *count)
 
 	number = (long)n;
 	if (number > 9)
+	{
 		ft_putnbr(number / 10, count);
+		if (*count == -1)
+			return ;
+	}
 	result = (number % 10) + '0';
 	ft_putchar(result, count);
+	if (*count == -1)
+		return ;
 }
