@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 03:58:29 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/11/16 16:56:54 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:12:51 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ void	ft_putnbr(int n, int *count)
 	{
 		ft_putnbr(number / 10, count);
 		if (*count == -1)
-			return ;	
+			return ;
 	}
 	result = (number % 10) + '0';
 	ft_putchar(result, count);

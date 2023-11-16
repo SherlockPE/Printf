@@ -6,7 +6,7 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:04:43 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/11/16 16:48:08 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/16 17:11:47 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,29 +34,28 @@ void	flags_format(va_list lista, char c, int *ptr_i)
 
 int	ft_printf(char const *values, ...)
 {
-	va_list		lista;
-	int			i;
-	int			count_char;
+	va_list	lista;
+	int		i;
+	int		count_char;
 
 	count_char = 0;
 	va_start(lista, values);
 	i = 0;
 	while (values[i])
 	{
-		if (values[i] == '%')
+		if (values[i++] == '%')
 		{
 			i++;
-			flags_format(lista, values[i], &count_char);
+			flags_format(lista, values[i - 1], &count_char);
 			if (count_char == -1)
 				return (count_char);
 		}
 		else
 		{
-			ft_putchar(values[i], &count_char);
+			ft_putchar(values[i - 1], &count_char);
 			if (count_char == -1)
-				return (count_char);	
+				return (count_char);
 		}
-		i++;
 	}
 	va_end(lista);
 	return (count_char);
