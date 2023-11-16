@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
+/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:04:43 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/11/16 12:34:40 by fabriciolop      ###   ########.fr       */
+/*   Updated: 2023/11/16 16:48:08 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	flags_format(va_list lista, char c, int *ptr_i)
 	else if (c == 's')
 		ft_putstr(va_arg(lista, char *), ptr_i);
 	else if (c == 'p')
-		ft_print_memory(va_arg(lista, void *), ptr_i);
+		ft_print_memory(va_arg(lista, unsigned long), ptr_i);
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(lista, int), ptr_i);
 	else if (c == 'u')
@@ -47,9 +47,15 @@ int	ft_printf(char const *values, ...)
 		{
 			i++;
 			flags_format(lista, values[i], &count_char);
+			if (count_char == -1)
+				return (count_char);
 		}
 		else
+		{
 			ft_putchar(values[i], &count_char);
+			if (count_char == -1)
+				return (count_char);	
+		}
 		i++;
 	}
 	va_end(lista);

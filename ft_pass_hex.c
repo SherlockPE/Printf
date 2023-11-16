@@ -6,13 +6,13 @@
 /*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 04:11:33 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/11/14 17:19:56 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/16 16:38:10 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_converter_hexa_long(long long number, int *count)
+void	ft_converter_hexa_long(unsigned long number, int *count)
 {
 	char	*hexa_digits;
 

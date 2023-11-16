@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
+/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/12 03:58:29 by flopez-r          #+#    #+#             */
-/*   Updated: 2023/11/16 13:41:02 by fabriciolop      ###   ########.fr       */
+/*   Updated: 2023/11/16 16:41:04 by flopez-r         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ void	ft_putnbr(int n, int *count)
 	result = (number % 10) + '0';
 	ft_putchar(result, count);
 }
+
 void	ft_putnbr_unsigned(unsigned int n, int *count)
 {
 	char	result;
