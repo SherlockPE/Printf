@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:04:43 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/11/14 15:27:50 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:34:40 by fabriciolop      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,18 @@ void	flags_format(va_list lista, char c, int *ptr_i)
 	else if (c == 'd' || c == 'i')
 		ft_putnbr(va_arg(lista, int), ptr_i);
 	else if (c == 'u')
-		ft_putnbr(va_arg(lista, unsigned int), ptr_i);
+		ft_putnbr_unsigned(va_arg(lista, unsigned int), ptr_i);
 	else if (c == 'x')
 		ft_converter_hexa_min(va_arg(lista, int), ptr_i);
 	else if (c == 'X')
 		ft_converter_hexa_mayus(va_arg(lista, int), ptr_i);
 }
 
-int    ft_printf(char const *values, ...)
+int	ft_printf(char const *values, ...)
 {
-	va_list    lista;
-	int        i;
-	int        count_char;
+	va_list		lista;
+	int			i;
+	int			count_char;
 
 	count_char = 0;
 	va_start(lista, values);

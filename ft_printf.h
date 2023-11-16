@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+        */
+/*   By: fabriciolopez <fabriciolopez@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/27 12:04:50 by fabriciolop       #+#    #+#             */
-/*   Updated: 2023/11/14 17:13:53 by flopez-r         ###   ########.fr       */
+/*   Updated: 2023/11/16 12:34:25 by fabriciolop      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 
+void	ft_putnbr_unsigned(unsigned int n, int *count);
 void	ft_print_memory(void *str, int *count);
 void	ft_converter_hexa_long(long long number, int *count);
 void	ft_converter_hexa_min(unsigned int number, int *count);
