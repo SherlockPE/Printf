@@ -6,7 +6,7 @@
 #    By: flopez-r <flopez-r@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/27 12:04:56 by fabriciolop       #+#    #+#              #
-#    Updated: 2023/11/12 09:48:27 by flopez-r         ###   ########.fr        #
+#    Updated: 2023/11/16 19:30:29 by flopez-r         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,16 +19,13 @@ SRC =	ft_printf.c\
 		ft_print_memory.c
 		
 OBJ = $(SRC:%.c=%.o)
-C_FLAGS = -Wall -Wextra -Werror
-CC = gcc
+CFLAGS := -Wall -Wextra -Werror
+CC := gcc
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	ar -rcs $(NAME) $(OBJ)
-
-%.o: %.c
-	$(CC) $(FLAGS) -c $< -o $@
+	$(AR) -rcs $(NAME) $(OBJ)
 
 clean:
 	rm -f $(OBJ)
@@ -36,7 +33,6 @@ clean:
 fclean: clean
 	rm -f $(NAME)
 
-re:
-	fclean all
+re: fclean all
 
 .PHONY: all clean fclean re
